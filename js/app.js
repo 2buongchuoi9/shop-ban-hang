@@ -223,7 +223,9 @@ window.onload = () => {
     })
     document.querySelector(".table").innerHTML = `
         <div id="thong_bao">
-            <img src="./images/hang_trong.webp" alt="" />
+            <img src="./images/hang_trong.webp" />
+            <div></div>
+            <button type="button" class="vao_ch" onclick="an()">vào cửa hàng</button>
         </div> 
         <button class="thoat" onclick="an()">X</button>
         <div id="cart_cart">
@@ -265,13 +267,10 @@ window.onload = () => {
     const show_cart = document.querySelector("#show_cart")
     const tong_tien = document.querySelector("#tong_tien");
 
-    // var a = (screen.width - document.querySelector(".can").offsetWidth) / 2 - 9
-    // document.querySelector(".table").style.left = `${a + 150}px`
 
     // setInterval(() => {
     //     document.body.style.background = `rgb(${Math.floor(Math.random() * 255)},${Math.floor(Math.random() * 255)},${Math.floor(Math.random() * 255)},0.5)`
     // }, 3000);
-
 
     [...document.querySelectorAll(".nut")].forEach(e => {
         e.addEventListener("click", () => {
@@ -289,7 +288,6 @@ window.onload = () => {
                     cart_icon.style.height = `20px`
                     cart_icon.style.width = `20px`
                     cart_icon.style.fontSize = `18px`
-
                     document.querySelector(".thong_bao").style.top = "-150px"
                 }
             }, 200);
@@ -356,28 +354,41 @@ function mua(index, obj) {
     console.log(arr_mua);
 }
 
+// [...document.querySelectorAll(".xoa")].forEach(e => {
+//     e.addEventListener("click", (event) => {
+//         console.log(event.target);
+//     });
+// });
+
 
 
 function xoa(index, obj) {
     var node = obj.parentElement.parentElement
     node.removeChild(obj.parentElement)
     arr_mua.splice(index, 1)
+
     reset()
+    hien()
 }
 
 
 function hien() {
-    document.querySelector(".table").style.display = "block"
-    if (cart_icon.innerHTML == 0) {
-        document.querySelector("#thong_bao").style.display = "block"
+
+    document.querySelector(".table").style.top = "120px"
+    if (document.querySelector("#cart_icon").innerHTML == 0) {
         document.querySelector("#cart_cart").style.display = "none"
+        document.querySelector("#thong_bao").style.display = "block"
+        document.querySelector("#thong_bao").style.transform = "scale(1)"
+        console.log("hello");
     } else {
         document.querySelector("#cart_cart").style.display = "block"
         document.querySelector("#thong_bao").style.display = "none"
+        document.querySelector("#thong_bao").style.transform = "scale(0)"
+
     }
 }
 function an() {
-    document.querySelector(".table").style.display = "none"
+    document.querySelector(".table").style.top = "1000px"
 }
 
 function xem(obj) {
@@ -422,8 +433,6 @@ function reset() {
     })
     cart_icon.innerHTML = `${dem}`
     document.querySelector("#tong_soluong").innerHTML = `${dem}`
-
-
 
     var e = document.querySelector("#cart_giaohang")
     var giaTri = e.options[e.selectedIndex].value * 1;

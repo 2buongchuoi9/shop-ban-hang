@@ -874,15 +874,16 @@ details li {
 .table {
     position: fixed;
     width: 100%;
-    top: 120px;
+    top: 1000px;
     left: 0;
     right: 0;
     z-index: 999;
     background: #fff;
     text-align: center;
-    display: none;
+    /* display: none; */
     height: 100%;
     overflow-y: scroll;
+    transition: all 0.5s linear;
 }
 .chu {
     font-size: 18px;
@@ -914,7 +915,8 @@ hr {
     font-size: 50px;
 }
 
-.xem_sp {
+.xem_sp,
+.vao_ch {
     padding: 10px;
     font-size: 18px;
     background-color: #0ebaec;
@@ -1029,8 +1031,16 @@ hr {
     color: #fff;
     background-color: rgb(246, 14, 14);
 }
-#thong_bao i {
-    font-size: 100px;
+
+#thong_bao img {
+    width: 500px;
+}
+#thong_bao {
+    transition: all 2s linear;
+    text-align: center;
+    display: block;
+    transform: scale(0);
+    transition: all 1s linear;
 }
 .dat_hang {
     width: 100%;
