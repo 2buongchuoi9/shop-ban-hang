@@ -1,0 +1,175 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html {
+    background: #f4f4f4;
+}
+body {
+    margin: auto auto;
+    width: 80%;
+    background: white;
+}
+.row {
+    width: 100%;
+    display: flex;
+    text-align: center;
+}
+.sanPham {
+    position: relative;
+    width: 25%;
+    border: 1px solid rgb(226, 224, 224);
+    margin: 10px;
+}
+.sanPham > .giamGia {
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    width: 40px;
+    height: 40px;
+    background: red;
+    padding: 10px 3px;
+    border-radius: 50%;
+    color: white;
+    font-size: 900;
+}
+.sanPham:hover .giamGia {
+    top: 8px;
+    right: 8px;
+    background: rgb(16, 81, 221);
+    box-shadow: 1px 1px 10px black;
+    transition: all 0.5s ease-in-out;
+}
+.sanPham:hover {
+    border: 1px solid black;
+    box-shadow: 1px 1px 10px rgb(195, 188, 188);
+}
+.sanPham:hover > .nut {
+    background: red;
+    box-shadow: 1px 1px 10px black;
+    transition: all 0.5s ease-in-out;
+    width: 45%;
+    margin: 1% 27.5%;
+}
+.sanPham > .hinh {
+    width: 60%;
+}
+
+.sanPham:hover .ten {
+    color: orange;
+}
+.ten,
+.tien {
+    margin: 5px auto;
+}
+.tien_KM {
+    text-decoration-line: line-through;
+}
+.tien_goc {
+    font-size: 18px;
+    font-weight: 600;
+}
+.ten {
+    color: rgb(62, 62, 62);
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.nut {
+    width: 40%;
+    background: rgb(16, 81, 221);
+    padding: 10px;
+    margin: 10px 30%;
+    border: none;
+    color: white;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.gio_hang {
+    position: relative;
+    width: 80px;
+    height: 80px;
+    float: right;
+    background: #e8dfca;
+    border-radius: 50%;
+    text-align: center;
+    justify-items: center;
+    margin: 20px;
+    cursor: pointer;
+}
+.gio_hang > i {
+    justify-items: center;
+    padding: 23px;
+    font-size: 30px;
+}
+
+#cart_icon {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: rgb(251, 37, 118);
+    font-size: 18px;
+    padding: 5px;
+    right: 0px;
+}
+
+.table {
+    position: sticky;
+    width: 100%;
+    top: 0;
+    left: 0;
+    text-align: center;
+    z-index: 999;
+    background: rgb(255, 143, 177, 0.8);
+    text-align: center;
+    display: none;
+    min-height: 700px;
+}
+.table h3 {
+    margin: 50px;
+    font-size: 50px;
+}
+
+.thoat {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 20px;
+}
+
+#show_cart {
+    width: 800px;
+    margin: 50px auto 0 auto;
+    background-color: beige;
+    margin-bottom: 50px;
+}
+
+#show_cart td {
+    width: 16.6%;
+}
+
+#show_cart td > img {
+    width: 100%;
+}
+table,
+tr,
+td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+td > input {
+    width: 80px;
+    padding: 5px 10px;
+    font-size: 18px;
+}
+td img {
+    width: 50px;
+}
+
+tfoot td {
+    font-size: 20px;
+    font-weight: 600;
+}
